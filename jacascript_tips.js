@@ -1,4 +1,4 @@
-//1
+
 const foo = {name: ’tom’, age:30, nervous:false };
 const bar = {name: ’dick’, age:40, nervous:false };
 const baz = {name: ’harry’, age:50, nervous:true };
@@ -12,17 +12,16 @@ console.log(foo);
 
 console.log(“%c My Friends”, “color : orange; front-weight: bold")
 console.log({foo, bar, baz})
-//
 console.table([foo,bar,baz])
 
-//2
+
 console.time(“looper”);
 
 while(i<10000){i++}
 
 console.timeEnd(“looper”)
 
-//3 重要的方法例如删除，不被意外的执行两次
+//  重要的方法例如删除，不被意外的执行两次
 
  const deleteMe = () => console.trace(‘bye bye database’);
 
@@ -30,7 +29,7 @@ console.timeEnd(“looper”)
  deleteMe()
 
 
-//4 destructuring.js
+//  destructuring.js
 const turtle = {
     name: ‘Bob’,
     meal: 10,
