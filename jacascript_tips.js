@@ -121,3 +121,77 @@ pokemon.push('Weedle')
 pokemon = [ ...pokemon, 'Bulbasaur', 'Metapod', 'Weedle']
 //Shift
 pokemon = ['Bulbasaur', 'Metapod', 'Weedle', ...pokemon]
+
+//loops
+
+//bad loop code 
+const total = 0;
+const withTax = [];
+const highValue = [];
+for (i = 0; i < orders.length; i++) {
+    //Reduce
+    total += orders[i];
+
+    //Map
+    withTax.push(orders[i] * 1.1);
+
+    //Filter
+    if (orders[i] > 100)  {
+        highValue.push(order[i]);
+    }
+}
+
+//good 
+const total = orders.reduce((acc, cur) => acc + cur)
+
+//Map
+const withTax = orders.map(v => v* 1.1)
+
+//Filter
+const highValue = orders.filter(v => v > 100);
+
+//Async/Await
+const random = () => {
+    return Promise.resolve(Math.random())
+}
+
+//bad
+const sumRandomAsyncNums = () => {
+    let first;
+    let second;
+    let third;
+
+    return random()
+        .then(v => {
+            first = v;
+            return random();
+        })
+        .then(v => {
+            second = v;
+            return random();
+        })
+        .then(v => {
+            third = v;
+            return random();
+        })
+}
+
+//good
+
+const sumRandomAsyncNums = async() => {
+
+    const first = await random();
+    const second = await random();
+    const third = await random();
+    console.log(`Result ${first} + ${second} + ${third}`);
+    if (await random()) {}
+    //OR
+    const randos = Promise.all([
+        random(),
+        random(),
+        random()
+    ])
+    for (const r of await randos) {
+        
+    }
+}
