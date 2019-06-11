@@ -57,4 +57,4 @@ console.log(faces); // ['💰']
 const cleand = faces.map(v => 'hhah')
 console.log(cleand) //['hhah']
 
-//filter() map() some() every() forEach() indexOf()
+//filter() map() some() every() forEach() reduce() sort() splice() indexOf()
